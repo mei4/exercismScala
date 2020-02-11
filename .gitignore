@@ -13,6 +13,7 @@ src_managed/
 project
 project/boot/
 project/plugins/project/
+*/src/main/scala/.keep
 
 # Scala-IDE specific
 .scala_dependencies
