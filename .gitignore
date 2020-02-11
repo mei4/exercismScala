@@ -5,10 +5,12 @@
 .cache/
 .history/
 .lib/
+.exercism
 dist/*
-target/
+target
 lib_managed/
 src_managed/
+project
 project/boot/
 project/plugins/project/
 
