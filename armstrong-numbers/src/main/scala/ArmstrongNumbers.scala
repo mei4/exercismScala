@@ -6,5 +6,5 @@ object ArmstrongNumbers:
     val numberAsString = number.toString
     val length = numberAsString.length
 
-    numberAsString.map(_.asDigit).fold(0)((x, y) => x + pow(y, length).toInt) == number
+    numberAsString.map(digitAsChar => pow(digitAsChar.asDigit, length)).sum == number
   }
