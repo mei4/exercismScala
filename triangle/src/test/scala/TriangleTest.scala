@@ -72,4 +72,8 @@ class TriangleTest extends AnyFunSuite with Matchers {
   test("scalene - sides may be floats") {
     Triangle(0.5, 0.4, 0.6).scalene should be (true)
   }
+
+  test("degenerate - 2 sides added are the 3rd") {
+    Triangle(5, 4, 9).degenerate should be (true)
+  }
 }
