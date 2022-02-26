@@ -28,17 +28,13 @@ object House:
   )
 
   def recite(firstVerseIndex: Int, lastVerseIndex: Int): String =
-    def reciteVerse(verseNumber: Int) =
-      if verseNumber == 1 then s"This is ${phrases(verseNumber-1)}\n"
+    def reciteAcc(firstVerseIndex: Int, lastVerseIndex: Int, acc: String): String =
+      if firstVerseIndex > lastVerseIndex then acc
       else
-        var result = s"This is ${phrases(verseNumber-1)}"
+        var result = s"This is ${phrases(firstVerseIndex-1)}"
         for
-          index <- Range(verseNumber -1, 0, -1)
+          index <- Range(firstVerseIndex -1, 0, -1)
         do
           result = result.++(s" that ${verbs(index - 1)} ${phrases(index - 1)}")
-        s"$result\n"
-    
-    var result = ""
-    for index <- Range(firstVerseIndex, lastVerseIndex + 1) do
-      result = result ++ reciteVerse(index)
-    s"$result\n"
+        reciteAcc(firstVerseIndex + 1, lastVerseIndex, acc ++ s"$result\n")
+    reciteAcc(firstVerseIndex, lastVerseIndex, "") + "\n"
