@@ -1,30 +1,17 @@
 object House:
   val phrases = List(
     "the house that Jack built.",
-    "the malt",
-    "the rat",
-    "the cat",
-    "the dog",
-    "the cow with the crumpled horn",
-    "the maiden all forlorn",
-    "the man all tattered and torn",
-    "the priest all shaven and shorn",
-    "the rooster that crowed in the morn",
-    "the farmer sowing his corn",
-    "the horse and the hound and the horn"
-  )
-  val verbs = List(
-    "lay in",
-    "ate",
-    "killed",
-    "worried",
-    "tossed",
-    "milked",
-    "kissed",
-    "married",
-    "woke",
-    "kept",
-    "belonged to"
+    "the malt that lay in",
+    "the rat that ate",
+    "the cat that killed",
+    "the dog that worried",
+    "the cow with the crumpled horn that tossed",
+    "the maiden all forlorn that milked",
+    "the man all tattered and torn that kissed",
+    "the priest all shaven and shorn that married",
+    "the rooster that crowed in the morn that woke",
+    "the farmer sowing his corn that kept",
+    "the horse and the hound and the horn that belonged to"
   )
 
   def recite(firstVerseIndex: Int, lastVerseIndex: Int): String =
@@ -35,6 +22,6 @@ object House:
         for
           index <- Range(firstVerseIndex -1, 0, -1)
         do
-          result = result.++(s" that ${verbs(index - 1)} ${phrases(index - 1)}")
+          result = result.++(s" ${phrases(index - 1)}")
         reciteAcc(firstVerseIndex + 1, lastVerseIndex, acc ++ s"$result\n")
     reciteAcc(firstVerseIndex, lastVerseIndex, "") + "\n"
