@@ -12,7 +12,6 @@ class BowlingTest extends AnyFunSuite with Matchers {
   }
 
   test("should be able to score a game with no strikes or spares") {
-    pending
     val score = List(3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6).foldLeft(Bowling())((acc, roll) => acc.roll(roll)).score()
     score should be (Right(90))
   }

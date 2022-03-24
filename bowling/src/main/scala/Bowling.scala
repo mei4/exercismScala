@@ -1,5 +1,8 @@
-class Bowling():
+class Bowling(points: Int):
 
-  def roll(score: Int): Bowling = ???
+  def this() = this(0)
 
-  def score(): Either[Boolean, Int] = ???
+  def roll(score: Int): Bowling =
+    new Bowling(points + score)
+
+  def score(): Either[Boolean, Int] = Right(points)
