@@ -6,7 +6,8 @@ import org.scalatest.matchers.should.Matchers
 class BowlingTest extends AnyFunSuite with Matchers {
 
   test("should be able to score a game with all zeros") {
-    val score = List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0).foldLeft(Bowling())((acc, roll) => acc.roll(roll)).score()
+    val score = List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+      .foldLeft(Bowling())((acc, rollScore) => acc.roll(rollScore)).score()
     score should be (Right(0))
   }
 
