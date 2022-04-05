@@ -17,13 +17,11 @@ class BowlingTest extends AnyFunSuite with Matchers {
   }
 
   test("a spare followed by zeros is worth ten points") {
-    pending
     val score = List(6, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0).foldLeft(Bowling())((acc, roll) => acc.roll(roll)).score()
     score should be (Right(10))
   }
 
   test("points scored in the roll after a spare are counted twice") {
-    pending
     val score = List(6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0).foldLeft(Bowling())((acc, roll) => acc.roll(roll)).score()
     score should be (Right(16))
   }
