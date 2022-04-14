@@ -10,6 +10,6 @@ class Bowling(points: Int, previousScore: Int, rollTurn: Int, nextHasToBeTwice: 
     if rollTurn % 2 == 0 then
       if score + previousScore == 10 then return new Bowling(points + score, score, rollTurn + 1, rollTurn != 20)
     if nextHasToBeTwice then return new Bowling(points + score*2, score, rollTurn + 1, false)
-    else return new Bowling(points + score, score, rollTurn + 1, false)
+      else return new Bowling(points + score, score, rollTurn + 1, false)
 
   def score(): Either[Boolean, Int] = Right(points)
