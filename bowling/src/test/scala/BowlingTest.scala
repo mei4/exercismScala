@@ -27,25 +27,21 @@ class BowlingTest extends AnyFunSuite with Matchers {
   }
 
   test("consecutive spares each get a one roll bonus") {
-    pending
     val score = List(5, 5, 3, 7, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0).foldLeft(Bowling())((acc, roll) => acc.roll(roll)).score()
     score should be (Right(31))
   }
 
   test("a spare in the last frame gets a one roll bonus that is counted once") {
-    pending
     val score = List(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 7).foldLeft(Bowling())((acc, roll) => acc.roll(roll)).score()
     score should be (Right(17))
   }
 
   test("a strike earns ten points in a frame with a single roll") {
-    pending
     val score = List(10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0).foldLeft(Bowling())((acc, roll) => acc.roll(roll)).score()
     score should be (Right(10))
   }
 
   test("points scored in the two rolls after a strike are counted twice as a bonus") {
-    pending
     val score = List(10, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0).foldLeft(Bowling())((acc, roll) => acc.roll(roll)).score()
     score should be (Right(26))
   }
